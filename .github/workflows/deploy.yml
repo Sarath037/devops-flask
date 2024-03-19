@@ -1,0 +1,25 @@
+name: Flask-app
+
+on:
+  push:
+    branches: master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3 
+      - name: Setup python
+        uses: actions/setup-python@v2
+      - name: run requirements
+        run: pip install -r requirements.txt
+      - name: Print debugging information
+        run: |
+          echo "Python Version: $(python --version)"
+          echo "Working Directory: $(pwd)"
+          echo "Contents of Working Directory: $(ls -l)"      
+      - name: test case
+        run: python test.py
+      - name: run Flask-app
+        run: python app.py        
+       
