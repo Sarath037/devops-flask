@@ -12,7 +12,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v2
       - name: run requirements
-        run: pip install -r requirements.txt
+        run: pip install -r requirement.txt
       - name: Print debugging information
         run: |
           echo "Python Version: $(python --version)"
