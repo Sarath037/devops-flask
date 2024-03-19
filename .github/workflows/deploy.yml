@@ -27,5 +27,5 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key &&
           rsync -azP -e "ssh -i private_key -o StrictHostKeyChecking=no" app.py root@15.206.84.164:/root/test/ &&
           ssh -o StrictHostKeyChecking=no -i private_key root@15.206.84.164 '
-          python app.py
+          python3 app.py
           '
